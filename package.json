@@ -1,0 +1,27 @@
+{
+  "name": "chat-box",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp --require coffee-script/register --gulpfile gulpfile.litcoffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/annielcook/chat-box.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annielcook/chat-box/issues"
+  },
+  "homepage": "https://github.com/annielcook/chat-box",
+  "dependencies": {
+    "gulp-rename": "^1.2.0",
+    "gulp": "^3.5.5",
+    "gulp-less": "^1.2.2",
+    "gulp-browserify": "^0.5.0",
+    "coffee-script": "^1.7.1",
+    "coffeeify": "^0.6.0"
+  }
+}

@@ -1,6 +1,23 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-Polymer("chat-box");
+Polymer("chat-box", {
+  sample: 'Name',
+  chatName: 'All About Chat',
+  messages: [
+    {
+      who: "Sample",
+      what: "This is a chat",
+      when: new Date(2014, 3, 10)
+    }, {
+      who: "Sample Back",
+      what: "Really? A chat?",
+      when: new Date(2014, 3, 10)
+    }
+  ],
+  attached: function() {
+    return console.log('on page', this.messages);
+  }
+});
 
 
 },{}]},{},[1])
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2VuZXJhdGVkLmpzIiwic291cmNlcyI6WyIvVXNlcnMvYW5uaWVjb29rL2NoYXQtYm94L25vZGVfbW9kdWxlcy9ndWxwLWJyb3dzZXJpZnkvbm9kZV9tb2R1bGVzL2Jyb3dzZXJpZnkvbm9kZV9tb2R1bGVzL2Jyb3dzZXItcGFjay9fcHJlbHVkZS5qcyIsIi9Vc2Vycy9hbm5pZWNvb2svY2hhdC1ib3gvc3JjL2NoYXQtYm94LmxpdGNvZmZlZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtBQ0VJLE9BQUEsQ0FBUSxVQUFSLENBQUEsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIihmdW5jdGlvbiBlKHQsbixyKXtmdW5jdGlvbiBzKG8sdSl7aWYoIW5bb10pe2lmKCF0W29dKXt2YXIgYT10eXBlb2YgcmVxdWlyZT09XCJmdW5jdGlvblwiJiZyZXF1aXJlO2lmKCF1JiZhKXJldHVybiBhKG8sITApO2lmKGkpcmV0dXJuIGkobywhMCk7dGhyb3cgbmV3IEVycm9yKFwiQ2Fubm90IGZpbmQgbW9kdWxlICdcIitvK1wiJ1wiKX12YXIgZj1uW29dPXtleHBvcnRzOnt9fTt0W29dWzBdLmNhbGwoZi5leHBvcnRzLGZ1bmN0aW9uKGUpe3ZhciBuPXRbb11bMV1bZV07cmV0dXJuIHMobj9uOmUpfSxmLGYuZXhwb3J0cyxlLHQsbixyKX1yZXR1cm4gbltvXS5leHBvcnRzfXZhciBpPXR5cGVvZiByZXF1aXJlPT1cImZ1bmN0aW9uXCImJnJlcXVpcmU7Zm9yKHZhciBvPTA7bzxyLmxlbmd0aDtvKyspcyhyW29dKTtyZXR1cm4gc30pIiwiVGhpcyBvdXIgY2hhdCBib3ggY29tcG9uZW50ISFcblxuICAgIFBvbHltZXIgXCJjaGF0LWJveFwiIl19
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2VuZXJhdGVkLmpzIiwic291cmNlcyI6WyIvVXNlcnMvd2JhbGxhcmQvY2hhdC1ib3gvbm9kZV9tb2R1bGVzL2d1bHAtYnJvd3NlcmlmeS9ub2RlX21vZHVsZXMvYnJvd3NlcmlmeS9ub2RlX21vZHVsZXMvYnJvd3Nlci1wYWNrL19wcmVsdWRlLmpzIiwiL1VzZXJzL3diYWxsYXJkL2NoYXQtYm94L3NyYy9jaGF0LWJveC5saXRjb2ZmZWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUNFSSxPQUFBLENBQVEsVUFBUixFQUNFO0FBQUEsRUFBQSxNQUFBLEVBQVEsTUFBUjtBQUFBLEVBQ0EsUUFBQSxFQUFVLGdCQURWO0FBQUEsRUFFQSxRQUFBLEVBQVU7SUFDUjtBQUFBLE1BQUEsR0FBQSxFQUFLLFFBQUw7QUFBQSxNQUNBLElBQUEsRUFBTSxnQkFETjtBQUFBLE1BRUEsSUFBQSxFQUFVLElBQUEsSUFBQSxDQUFLLElBQUwsRUFBVyxDQUFYLEVBQWMsRUFBZCxDQUZWO0tBRFEsRUFLUjtBQUFBLE1BQUEsR0FBQSxFQUFLLGFBQUw7QUFBQSxNQUNBLElBQUEsRUFBTSxpQkFETjtBQUFBLE1BRUEsSUFBQSxFQUFVLElBQUEsSUFBQSxDQUFLLElBQUwsRUFBVyxDQUFYLEVBQWMsRUFBZCxDQUZWO0tBTFE7R0FGVjtBQUFBLEVBV0EsUUFBQSxFQUFVLFNBQUEsR0FBQTtXQUNSLE9BQU8sQ0FBQyxHQUFSLENBQVksU0FBWixFQUF1QixJQUFDLENBQUEsUUFBeEIsRUFEUTtFQUFBLENBWFY7Q0FERixDQUFBLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIoZnVuY3Rpb24gZSh0LG4scil7ZnVuY3Rpb24gcyhvLHUpe2lmKCFuW29dKXtpZighdFtvXSl7dmFyIGE9dHlwZW9mIHJlcXVpcmU9PVwiZnVuY3Rpb25cIiYmcmVxdWlyZTtpZighdSYmYSlyZXR1cm4gYShvLCEwKTtpZihpKXJldHVybiBpKG8sITApO3Rocm93IG5ldyBFcnJvcihcIkNhbm5vdCBmaW5kIG1vZHVsZSAnXCIrbytcIidcIil9dmFyIGY9bltvXT17ZXhwb3J0czp7fX07dFtvXVswXS5jYWxsKGYuZXhwb3J0cyxmdW5jdGlvbihlKXt2YXIgbj10W29dWzFdW2VdO3JldHVybiBzKG4/bjplKX0sZixmLmV4cG9ydHMsZSx0LG4scil9cmV0dXJuIG5bb10uZXhwb3J0c312YXIgaT10eXBlb2YgcmVxdWlyZT09XCJmdW5jdGlvblwiJiZyZXF1aXJlO2Zvcih2YXIgbz0wO288ci5sZW5ndGg7bysrKXMocltvXSk7cmV0dXJuIHN9KSIsIlRoaXMgb3VyIGNoYXQgYm94IGNvbXBvbmVudCEhXG5cbiAgICBQb2x5bWVyIFwiY2hhdC1ib3hcIixcbiAgICAgIHNhbXBsZTogJ05hbWUnXG4gICAgICBjaGF0TmFtZTogJ0FsbCBBYm91dCBDaGF0J1xuICAgICAgbWVzc2FnZXM6IFtcbiAgICAgICAgd2hvOiBcIlNhbXBsZVwiXG4gICAgICAgIHdoYXQ6IFwiVGhpcyBpcyBhIGNoYXRcIlxuICAgICAgICB3aGVuOiBuZXcgRGF0ZSgyMDE0LCAzLCAxMClcbiAgICAgICxcbiAgICAgICAgd2hvOiBcIlNhbXBsZSBCYWNrXCJcbiAgICAgICAgd2hhdDogXCJSZWFsbHk/IEEgY2hhdD9cIlxuICAgICAgICB3aGVuOiBuZXcgRGF0ZSgyMDE0LCAzLCAxMClcbiAgICAgIF1cbiAgICAgIGF0dGFjaGVkOiAtPlxuICAgICAgICBjb25zb2xlLmxvZyAnb24gcGFnZScsIEBtZXNzYWdlc1xuIl19

@@ -5,7 +5,7 @@
   <div class="chat-window {{chatWindow.targetType}} {{chatWindow.targetId}} window{{$index+1}}" ng-repeat="chatWindow in chatWindows">
     <div class="header">
       <div class="caption">
-        --Chat Title--
+        {{chatName}}
       </div>
       <i class="remove icon" on-click={{closeWindow}}></i>
     </div>

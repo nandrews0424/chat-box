@@ -1,7 +1,6 @@
 This our chat box component!!
 
     Polymer "chat-box",
-      sample: 'Name'
       chatName: 'All About Chat'
       messages: [
         who: "Sample"

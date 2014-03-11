@@ -2,20 +2,20 @@
 <link rel="stylesheet" type="text/css" href="chat-box.css">
 <polymer-element name="chat-box">
 <template>
-  <div class="chat-window {{chatWindow.targetType}} {{chatWindow.targetId}} window{{$index+1}}" ng-repeat="chatWindow in chatWindows">
+  <div class="chat-window">
     <div class="header">
       <div class="caption">
         {{chatName}}
       </div>
-      <i class="remove icon" on-click={{closeWindow}}></i>
+      <i class="remove icon" on-click="{{closeWindow}}"></i>
     </div>
-    <div class="body">
+    <div class="body" id="body">
       <div id="loading" class="loading" ng-show="chatWindow.loading">
         Loading
       </div>
-      <ul id="messagelist" class="ui list">
+      <ul id="messagelist" on-mousewheel="{{scrollList}}" class="ui list">
         <template id="messages" repeat="{{message in messages}}">
-          <li class="item">
+          <li class="chat item">
             <div class="chat-entry">
               <div class="meta">
                 <span class="from">{{message.who}}</span>

@@ -36,6 +36,12 @@
             what: "This is a new chat",
             when: new Date(2014, 2, 10)
           }])
+        } else {
+          evt.originalEvent.detail.callback(undefined, evt.originalEvent.detail.startIndex, evt.originalEvent.detail.endIndex, [{
+            who: "Sample",
+            what: "This is a new chat" + evt.originalEvent.detail.startIndex,
+            when: new Date(2014, 2, 10)
+          }])
         }
 
       })

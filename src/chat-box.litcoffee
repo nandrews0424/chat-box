@@ -21,7 +21,7 @@ This our chat box component!!
       getChunk: -> 
         @$.loading.removeAttribute "style"
         endIndex = -1 - @messages.length 
-        startIndex = endIndex - 1 
+        startIndex = endIndex  
         @fire "chunk",
           startIndex: startIndex
           endIndex: endIndex
@@ -33,6 +33,14 @@ This our chat box component!!
               @messages.splice(slot, 1, message)
               slot++
             @$.loading.setAttribute "style","display: none" 
-            setTimeout => 
-              @shadowRoot.querySelector("li:last-of-type").scrollIntoView(false)
+            if endIndex is -1
+              setTimeout => 
+                @shadowRoot.querySelector("li:last-of-type").scrollIntoView(false)
+      scrollList: (evt) ->
+        if @shadowRoot.querySelector("li:first-of-type").getBoundingClientRect().top == @$.messagelist.getBoundingClientRect().top
+          @getChunk()
+      closeWindow: (evt) ->
+        console.log(evt)
+
+
 

@@ -4,6 +4,7 @@
   <head>
     <title>Chat Box</title>
     <script src="../platform/platform.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <link rel="import" href="build/chat-box.html">
     <style>
       body {
@@ -16,6 +17,27 @@
     <script>
       document.addEventListener('polymer-ready', function() {
         console.log("Hi!")
+      })
+      $("chat-box").on("chunk", function(evt){
+        console.log(evt) 
+        if (evt.originalEvent.detail.endIndex == -1){
+          evt.originalEvent.detail.callback(undefined, -1, -1, [{
+            who: "Sample",
+            what: "This is a really really new chat",
+            when: new Date(2014, 2, 10)
+          }])
+          evt.originalEvent.detail.callback(undefined, -2, -2, [{
+            who: "Sample2",
+            what: "This is a really new chat",
+            when: new Date(2014, 2, 10)
+          }])
+          evt.originalEvent.detail.callback(undefined, -15, -1, [{
+            who: "Sample",
+            what: "This is a new chat",
+            when: new Date(2014, 2, 10)
+          }])
+        }
+
       })
     </script>
   </body>

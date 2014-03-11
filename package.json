@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp --require coffee-script/register --gulpfile gulpfile.litcoffee"
+    "start": "nodemon  --exec 'gulp' --require coffee-script/register --gulpfile gulpfile.litcoffee"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
     "gulp-less": "^1.2.2",
     "gulp-browserify": "^0.5.0",
     "coffee-script": "^1.7.1",
-    "coffeeify": "^0.6.0"
+    "coffeeify": "^0.6.0",
+    "nodemon": "^1.0.15",
+    "moment": "^2.5.1"
   }
 }

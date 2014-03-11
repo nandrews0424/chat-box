@@ -19,7 +19,7 @@
             <div class="chat-entry">
               <div class="meta">
                 <span class="from">{{message.who}}</span>
-                <span class="timestamp">{{message.when}}</span>
+                <span class="timestamp">{{message.when | dateAgo}}</span>
               </div>
               {{message.what}}
             </div>

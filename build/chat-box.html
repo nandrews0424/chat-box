@@ -1,6 +1,6 @@
 <link rel="import" href="../../polymer/polymer.html">
 <link rel="stylesheet" type="text/css" href="chat-box.css">
-<polymer-element name="chat-box">
+<polymer-element name="chat-box" attributes="what messages">
 <template>
   <div class="chat-window">
     <div class="header">
@@ -29,7 +29,7 @@
     </div>
     <div id="poster" class="ui form chat-post">
       <div class="ui input">
-        <textarea type="text" placeholder="Chat..."></textarea>
+        <textarea type="text" placeholder="Chat..." value="{{what}}"></textarea>
       </div>
       <button class="ui button" on-click="{{sendMessage}}">Send</button>
     </div>

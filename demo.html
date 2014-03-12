@@ -41,8 +41,11 @@
             when: new Date(2014, 2, 10)
           }])
         }
-
       })
+      $("chat-box").on("message", function(evt){
+        evt.originalEvent.detail.who = "Annie"
+        evt.originalEvent.detail.callback(undefined, evt.originalEvent.detail)
+      }) 
     </script>
   </body>
 </html>

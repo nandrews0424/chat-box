@@ -44,6 +44,22 @@ This our chat box component!!
           @getChunk()
       closeWindow: (evt) ->
         console.log(evt)
+      sendMessage: ->
+        console.log(@what)
+        @fire "message",
+          who: null
+          what: @what
+          when: new Date()
+          callback: (error, message) =>
+            console.log(message)
+            @what = ""
+            @messages.push(message)
+            setTimeout => 
+                @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
+              , 200
+
+
+
 
 
 

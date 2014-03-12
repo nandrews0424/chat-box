@@ -48,7 +48,6 @@ This our chat box component!!
       showWindow: (evt) ->
         @removeAttribute "style"
       sendMessage: ->
-        console.log(@what)
         if @what?.trim() is "" or not @what
           return
         else
@@ -57,7 +56,6 @@ This our chat box component!!
             what: @what
             when: new Date()
             callback: (error, message) =>
-              console.log(message)
               @what = ""
               @messages.push(message)
               setTimeout => 
@@ -71,6 +69,18 @@ This our chat box component!!
           @sendMessage()  
         else if evt.keyCode is 27
           @what = ""
+      autoGrow: (evt) ->
+        if @$.textbox.scrollHeight > @$.textbox.getBoundingClientRect().height
+          height = @$.textbox.getBoundingClientRect().height + @getDefaultFontSize()
+          @$.textbox.setAttribute "style", "height: #{height}px"
+      getDefaultFontSize: -> 
+        who = document.createElement('div')
+        who.style.width = "1000em"
+        @shadowRoot.appendChild(who)
+        fs= who.offsetWidth / 1000
+        @shadowRoot.removeChild(who)
+        fs
+        
 
 
 

@@ -29,7 +29,7 @@
     </div>
     <div id="poster" class="ui form chat-post">
       <div class="ui input">
-        <textarea type="text" placeholder="Chat..." value="{{what}}" on-keydown="{{checkKey}}"></textarea>
+        <textarea type="text" id="textbox" placeholder="Chat..." value="{{what}}" on-keydown="{{checkKey}}" on-keypress="{{autoGrow}}"></textarea>
       </div>
       <button class="ui button" on-click="{{sendMessage}}">Send</button>
     </div>

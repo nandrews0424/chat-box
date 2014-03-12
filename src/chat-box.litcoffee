@@ -61,12 +61,14 @@ This our chat box component!!
               setTimeout => 
                   @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
                 , 200
+        @$.textbox.removeAttribute "style"
       checkKey: (evt) ->
         if evt.keyCode is 13 and evt.ctrlKey
           return
         else if evt.keyCode is 13
           evt.preventDefault()
-          @sendMessage()  
+          @sendMessage()
+
         else if evt.keyCode is 27
           @what = ""
       autoGrow: (evt) ->

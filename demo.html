@@ -16,10 +16,8 @@
   <chat-box></chat-box>
     <script>
       document.addEventListener('polymer-ready', function() {
-        console.log("Hi!")
       })
       $("chat-box").on("chunk", function(evt){
-        console.log(evt) 
         if (evt.originalEvent.detail.endIndex == -1){
           evt.originalEvent.detail.callback(undefined, -1, -1, [{
             who: "Sample",

@@ -5,7 +5,7 @@ This our chat box component!!
       markdown.toHTML(boxText) 
 
 
-
+    _ = require("lodash")
     moment = require("moment")
     PolymerExpressions::dateAgo = (date) -> moment(date).fromNow()
 
@@ -17,8 +17,9 @@ This our chat box component!!
       attached: ->
         console.log 'on page', @messages
         @$.loading.setAttribute "style","display: none" 
+      ready: ->
         @getChunk()
-      getChunk: -> 
+      getChunk: _.debounce -> 
         @$.loading.removeAttribute "style"
         endIndex = -1 - @messages.length 
         startIndex = endIndex  
@@ -35,7 +36,9 @@ This our chat box component!!
             @$.loading.setAttribute "style","display: none" 
             if endIndex is -1
               setTimeout => 
-                @shadowRoot.querySelector("li:last-of-type").scrollIntoView(false)
+                @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
+              , 200
+      , 100
       scrollList: (evt) ->
         if @shadowRoot.querySelector("li:first-of-type").getBoundingClientRect().top == @$.messagelist.getBoundingClientRect().top
           @getChunk()

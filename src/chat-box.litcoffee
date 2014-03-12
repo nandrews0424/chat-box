@@ -2,7 +2,7 @@ This our chat box component!!
 
     markdown = require("markdown").markdown
     PolymerExpressions::markdown = (boxText) -> 
-      markdown.toHTML(boxText) 
+      markdown.toHTML(boxText or "") 
 
 
     _ = require("lodash")
@@ -82,7 +82,10 @@ This our chat box component!!
         fs= who.offsetWidth / 1000
         @shadowRoot.removeChild(who)
         fs
-        
+    Polymer "html-echo",
+      htmlChanged: -> 
+        @innerHTML = @html 
+
 
 
 

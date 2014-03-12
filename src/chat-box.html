@@ -21,7 +21,7 @@
                 <span class="from">{{message.who}}</span>
                 <span class="timestamp">{{message.when | dateAgo}}</span>
               </div>
-              {{message.what}}
+              <html-echo html="{{message.what | markdown}}"></html-echo>
             </div>
           </li>
         </template>
@@ -35,5 +35,8 @@
     </div>
   </div>
 </template>
-<script src="chat-box.js"></script>
+  <script src="chat-box.js"></script>
+</polymer-element>
+<polymer-element name="html-echo" attributes="html">
+    <script src="chat-box.js"></script>
 </polymer-element>

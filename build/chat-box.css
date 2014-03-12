@@ -3686,7 +3686,11 @@ chat-box .chat-window .body ul {
   overflow-y: scroll;
 }
 chat-box .chat-window .body ul li {
+  overflow-x: hidden;
   -webkit-animation: showing 1s;
+}
+chat-box .chat-window .body ul li p {
+  margin: 0;
 }
 chat-box .chat-window .body ul li .chat-entry {
   padding: 0.5em;

@@ -49,17 +49,30 @@ This our chat box component!!
         @removeAttribute "style"
       sendMessage: ->
         console.log(@what)
-        @fire "message",
-          who: null
-          what: @what
-          when: new Date()
-          callback: (error, message) =>
-            console.log(message)
-            @what = ""
-            @messages.push(message)
-            setTimeout => 
-                @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
-              , 200
+        if @what?.trim() is "" or not @what
+          return
+        else
+          @fire "message",
+            who: null
+            what: @what
+            when: new Date()
+            callback: (error, message) =>
+              console.log(message)
+              @what = ""
+              @messages.push(message)
+              setTimeout => 
+                  @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
+                , 200
+      checkKey: (evt) ->
+        if evt.keyCode is 13 and evt.ctrlKey
+          return
+        else if evt.keyCode is 13
+          evt.preventDefault()
+          @sendMessage()  
+        else if evt.keyCode is 27
+          @what = ""
+
+
 
 
 

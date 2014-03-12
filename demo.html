@@ -46,6 +46,9 @@
         evt.originalEvent.detail.who = "Annie"
         evt.originalEvent.detail.callback(undefined, evt.originalEvent.detail)
       }) 
+      $(document).on("click", function(evt){
+        $("chat-box")[0].showWindow()
+      })
     </script>
   </body>
 </html>

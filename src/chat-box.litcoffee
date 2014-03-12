@@ -43,7 +43,10 @@ This our chat box component!!
         if @shadowRoot.querySelector("li:first-of-type").getBoundingClientRect().top == @$.messagelist.getBoundingClientRect().top
           @getChunk()
       closeWindow: (evt) ->
-        console.log(evt)
+        @setAttribute "style", "display: none"
+        evt.stopPropagation()
+      showWindow: (evt) ->
+        @removeAttribute "style"
       sendMessage: ->
         console.log(@what)
         @fire "message",
@@ -57,6 +60,8 @@ This our chat box component!!
             setTimeout => 
                 @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
               , 200
+
+
 
 
 

@@ -82,6 +82,11 @@ This our chat box component!!
         fs= who.offsetWidth / 1000
         @shadowRoot.removeChild(who)
         fs
+      addMessage: (message) -> 
+        @messages.push(message)
+        setTimeout => 
+          @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
+        , 200
     Polymer "html-echo",
       htmlChanged: -> 
         @innerHTML = @html 

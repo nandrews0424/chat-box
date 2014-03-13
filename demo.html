@@ -29,6 +29,9 @@
             what: "This is a really new chat",
             when: new Date(2014, 2, 10)
           }])
+          $("chat-box")[0].addMessage({who: "Sample2",
+            what: "Add me to the end!",
+            when: new Date(2014, 2, 10)})
           evt.originalEvent.detail.callback(undefined, -15, -1, [{
             who: "Sample",
             what: "This is a new chat",

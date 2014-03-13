@@ -7,7 +7,7 @@ This our chat box component!!
 
     _ = require("lodash")
     moment = require("moment")
-    PolymerExpressions::dateAgo = (date) -> moment(date).fromNow()
+    PolymerExpressions::dateAgo = (date) -> moment(date).format('lll')
 
     Polymer "chat-box",
       chatName: 'All About Chat'

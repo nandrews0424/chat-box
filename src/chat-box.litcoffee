@@ -68,9 +68,9 @@ This our chat box component!!
         else if evt.keyCode is 13
           evt.preventDefault()
           @sendMessage()
-
         else if evt.keyCode is 27
           @what = ""
+          @$.textbox.removeAttribute "style"
       autoGrow: (evt) ->
         if @$.textbox.scrollHeight > @$.textbox.getBoundingClientRect().height
           height = @$.textbox.getBoundingClientRect().height + @getDefaultFontSize()

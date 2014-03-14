@@ -1,6 +1,6 @@
 <link rel="import" href="../../polymer/polymer.html">
 <link rel="stylesheet" type="text/css" href="chat-box.css">
-<polymer-element name="chat-box" attributes="what messages">
+<polymer-element name="chat-box" attributes="what messages chatName typerName">
 <template>
   <div class="chat-window">
     <div class="header">
@@ -26,17 +26,22 @@
           </li>
         </template>
       </ul>
+      <div class="footer" id="footer">
+        <div class="caption">
+          {{typerName}} is typing...
+        </div>      
+      </div>
     </div>
     <div id="poster" class="ui form chat-post">
       <div class="ui input">
-        <textarea type="text" id="textbox" placeholder="Chat..." value="{{what}}" on-keydown="{{checkKey}}" on-keypress="{{autoGrow}}"></textarea>
+        <textarea type="text" id="textbox" placeholder="Chat..." value="{{what}}" on-keydown="{{checkKey}}" on-keypress="{{autoGrow}}" on-keyup="{{checkTyping}}"></textarea>
       </div>
       <button class="ui button" on-click="{{sendMessage}}">Send</button>
     </div>
   </div>
 </template>
-  <script src="chat-box.js"></script>
+<script src="chat-box.js"></script>
 </polymer-element>
 <polymer-element name="html-echo" attributes="html">
-    <script src="chat-box.js"></script>
+<script src="chat-box.js"></script>
 </polymer-element>

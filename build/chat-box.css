@@ -3707,6 +3707,14 @@ chat-box .chat-window .body ul li .chat-entry .meta .from {
 chat-box .chat-window .body ul li:nth-child(even) {
   background: #f4f9fd;
 }
+chat-box .chat-window .footer {
+  color: #999;
+  padding: 0.5em;
+  font-style: italic;
+}
+chat-box .chat-window .footer .caption {
+  font-size: 75%;
+}
 chat-box .chat-window .chat-post {
   display: flex;
   padding: 0.5em;

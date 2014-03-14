@@ -12,11 +12,11 @@ This our chat box component!!
     Polymer "chat-box",
       chatName: 'All About Chat'
       messages: [
-      
+
       ]
       attached: ->
-        console.log 'on page', @messages
         @$.loading.setAttribute "style","display: none" 
+        @$.footer.setAttribute "style","display: none" 
       ready: ->
         @getChunk()
       getChunk: _.debounce -> 
@@ -57,10 +57,7 @@ This our chat box component!!
             when: new Date()
             callback: (error, message) =>
               @what = ""
-              @messages.push(message)
-              setTimeout => 
-                  @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
-                , 200
+              @addMessage(message)
         @$.textbox.removeAttribute "style"
       checkKey: (evt) ->
         if evt.keyCode is 13 and evt.ctrlKey
@@ -75,6 +72,18 @@ This our chat box component!!
         if @$.textbox.scrollHeight > @$.textbox.getBoundingClientRect().height
           height = @$.textbox.getBoundingClientRect().height + @getDefaultFontSize()
           @$.textbox.setAttribute "style", "height: #{height}px"
+      checkTyping: (evt) ->
+        if @$.textbox.value.length > 0
+          @fire "typing"
+          @$.footer.removeAttribute "style"
+          listBottom = @$.messagelist.getBoundingClientRect().bottom
+          lastTop = @shadowRoot.querySelector("li:last-of-type")?.getBoundingClientRect().top
+          lastBottom = @shadowRoot.querySelector("li:last-of-type")?.getBoundingClientRect().bottom
+          if lastBottom > listBottom and lastTop < listBottom
+            @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
+        else 
+          @fire "not-typing"
+          @$.footer.setAttribute "style","display: none" 
       getDefaultFontSize: -> 
         who = document.createElement('div')
         who.style.width = "1000em"

@@ -52,6 +52,12 @@
       $(document).on("click", function(evt){
         $("chat-box")[0].showWindow()
       })
+      $("chat-box").on("typing", function(evt){
+        evt.target.typerName = "Annie"
+      })
+       $("chat-box").on("not-typing", function(evt){
+        evt.target.typerName = ""
+      })
     </script>
   </body>
 </html>

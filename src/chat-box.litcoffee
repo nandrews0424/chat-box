@@ -121,11 +121,6 @@ is to visually fold messages from a single user together with a block color.
         setTimeout =>
           @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
         , 200
-      closeWindow: (evt) ->
-        @setAttribute "style", "display: none"
-        evt.stopPropagation()
-      showWindow: (evt) ->
-        @removeAttribute "style"
 
 Simple way to get around the fact that Polymer always wants to escape HTML. This
 is intended to be used with markdown to prevent XSS.

@@ -10,10 +10,22 @@
       body {
         font-family: "Helvetica Neue", "Helvetica", Arial;
       }
+      #holder {
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        top: 1em;
+        z-index: 10;
+        width: 480px;
+        border: solid 1px #ccc;
+        box-shadow: 0 1px 5px 0px rgba(0,0,0,.325);
+      }
     </style>
   </head>
   <body unresolved>
-  <chat-box></chat-box>
+    <div id="holder">
+      <chat-box></chat-box>
+    </div>
     <script>
       document.addEventListener('polymer-ready', function() {
       })
@@ -72,7 +84,7 @@
       $("chat-box").on("typing", function(evt){
         evt.target.typerName = "Annie"
       })
-       $("chat-box").on("not-typing", function(evt){
+      $("chat-box").on("not-typing", function(evt){
         evt.target.typerName = ""
       })
     </script>

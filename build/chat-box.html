@@ -3,12 +3,6 @@
 <polymer-element name="chat-box" attributes="what messages chatName typerName">
 <template>
   <div class="chat-window">
-    <div class="header">
-      <div class="caption">
-        {{chatName}}
-      </div>
-      <i class="remove icon" on-click="{{closeWindow}}"></i>
-    </div>
     <div class="body" id="body">
       <div id="loading" class="loading" ng-show="chatWindow.loading">
         Loading

@@ -28,7 +28,9 @@
       </ul>
       <div class="footer" id="footer">
         <div class="caption">
-          {{typerName}} is typing...
+          <template bind if="{{typerName}}">
+            {{typerName}} is typing...
+          </template>
         </div>
       </div>
     </div>

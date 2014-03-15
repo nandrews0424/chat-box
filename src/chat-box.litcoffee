@@ -83,7 +83,6 @@ is to visually fold messages from a single user together with a block color.
             if @messages[idx-1].run is 'start'
               @messages[idx-1].run = 'single'
           idx++
-        console.log @messages
       checkKey: (evt) ->
         if evt.keyCode is 13 and evt.ctrlKey
           return

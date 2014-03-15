@@ -4,6 +4,12 @@
 @import "../bower_components/semantic/build/less/elements/icon";
 @import "../bower_components/semantic/build/less/elements/header";
 
+.chatBorder(@color) {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0.3em 0em 0em 0em @color inset;
+  box-shadow: 0.3em 0em 0em 0em @color inset;
+}
+
 @-webkit-keyframes loading
 {
   0%   {color:#111;}
@@ -74,30 +80,74 @@ chat-box {
         padding: 0;
         flex: 1;
         overflow-y: scroll;
-        li {
+        .colorway-0 {
+          .chatBorder(#5C6166);
+        }
+        .colorway-1 {
+          .chatBorder(#5BBD72);
+        }
+        .colorway-2 {
+          .chatBorder(#D95C5C);
+        }
+        .colorway-3 {
+          .chatBorder(#E96633);
+        }
+        .colorway-4 {
+          .chatBorder(#6ECFF5);
+        }
+        .colorway-5 {
+          .chatBorder(#564F8A);
+        }
+        .colorway-6 {
+          .chatBorder(#00B5AD);
+        }
+        .message.item.run-start {
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          padding-bottom: 0px;
+          .meta {
+            display: flex;
+          }
+        }
+        .message.item.run-single {
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          .meta {
+            display: flex;
+          }
+        }
+        .message.item.run-in {
+          .meta {
+            display: none;
+          }
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        .message.item.run-end {
+          .meta {
+            display: none;
+          }
+          padding-top: 0;
+        }
+        .message.item {
+          padding: 0.5em;
+          overflow-x: hidden;
+          -webkit-animation: showing 1s;
           p {
             margin: 0;
           }
-          overflow-x: hidden;
-          -webkit-animation: showing 1s;
-          .chat-entry {
-            padding: 0.5em;
-            border-top: solid 1px #eee;
+          .message.display {
             .meta {
               font-size: 75%;
               color: #999;
-              display: flex;
               .from {
                 flex: 1;
               }
               .timestamp {
               }
             }
-
           }
         }
-        li:nth-child(even) {
-          background: rgb(244, 249, 253);
+        li:last-of-type {
+          padding-bottom: 0.5em !important;
         }
       }
     }

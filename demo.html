@@ -29,14 +29,31 @@
             what: "This is a really new chat",
             when: new Date(2014, 2, 10)
           }])
-          $("chat-box")[0].addMessage({who: "Sample2",
-            what: "Add me to the end!",
-            when: new Date(2014, 2, 10)})
-          evt.originalEvent.detail.callback(undefined, -15, -1, [{
-            who: "Sample",
+          evt.originalEvent.detail.callback(undefined, -3, -3, [{
+            who: "Sample2",
             what: "This is a new chat",
             when: new Date(2014, 2, 10)
           }])
+          evt.originalEvent.detail.callback(undefined, -4, -4, [{
+            who: "Sample2",
+            what: "Hi all",
+            when: new Date(2014, 2, 10)
+          }])
+          evt.originalEvent.target.addMessage({
+            who: "Sample",
+            what: "Ah yes -- reply!",
+            when: new Date(2014, 2, 10)
+          })
+          evt.originalEvent.target.addMessage({
+            who: "Me",
+            what: "You betcha!",
+            when: new Date(2014, 2, 10)
+          })
+          evt.originalEvent.target.addMessage({
+            who: "You",
+            what: "And how",
+            when: new Date(2014, 2, 10)
+          })
         } else {
           evt.originalEvent.detail.callback(undefined, evt.originalEvent.detail.startIndex, evt.originalEvent.detail.endIndex, [{
             who: "Sample",

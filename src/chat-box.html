@@ -15,9 +15,9 @@
       </div>
       <ul id="messagelist" on-mousewheel="{{scrollList}}" class="ui list">
         <template id="messages" repeat="{{message in messages}}">
-          <li class="chat item">
-            <div class="chat-entry">
-              <div class="meta">
+          <li class="message item run-{{message.run}} colorway-{{message.colorWay}}">
+            <div class="message display">
+              <div class="meta ">
                 <span class="from">{{message.who}}</span>
                 <span class="timestamp">{{message.when | dateAgo}}</span>
               </div>
@@ -29,7 +29,7 @@
       <div class="footer" id="footer">
         <div class="caption">
           {{typerName}} is typing...
-        </div>      
+        </div>
       </div>
     </div>
     <div id="poster" class="ui form chat-post">

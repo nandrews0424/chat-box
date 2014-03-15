@@ -71,7 +71,7 @@ is to visually fold messages from a single user together with a block color.
         while idx < @messages.length
           if not @nameIndexes[@messages[idx].who]?
             @nameIndexes[@messages[idx].who] = _.keys(@nameIndexes).length
-          @messages[idx].colorWay = @nameIndexes[@messages[idx].who]
+          @messages[idx].colorWay = @nameIndexes[@messages[idx].who] % 7
           if idx is 0
             @messages[0].run = 'start'
           else if @messages[idx-1].who is @messages[idx].who

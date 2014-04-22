@@ -3749,6 +3749,7 @@ chat-box .chat-window .footer .caption {
 }
 chat-box .chat-window .chat-post {
   display: flex;
+  align-items: flex-end;
   padding: 0.5em;
 }
 chat-box .chat-window .chat-post .ui.input {

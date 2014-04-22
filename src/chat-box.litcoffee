@@ -95,7 +95,7 @@ is to visually fold messages from a single user together with a block color.
       autoGrow: (evt) ->
         if @$.textbox.scrollHeight > @$.textbox.getBoundingClientRect().height
           height = @$.textbox.getBoundingClientRect().height + @getDefaultFontSize()
-          @$.textbox.setAttribute "style", "height: #{height}px"
+          @$.textbox.style.height = "#{height}px"
       checkTyping: (evt) ->
         if @$.textbox.value.length > 0
           @fire "typing"

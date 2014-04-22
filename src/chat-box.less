@@ -3,6 +3,7 @@
 @import "../bower_components/semantic/build/less/elements/button";
 @import "../bower_components/semantic/build/less/elements/icon";
 @import "../bower_components/semantic/build/less/elements/header";
+@import "./themes/monokai_sublime";
 
 .chatBorder(@color) {
   -webkit-appearance: none;
@@ -101,12 +102,18 @@ chat-box {
           padding-top: 0;
         }
         .message.item {
-          padding: 0.5em;
+          padding: 0.5em 0.5em 0.5em 0.5em;
           overflow-x: hidden;
           word-wrap: break-word;
           -webkit-animation: showing 1s;
           p {
             margin: 0;
+          }
+          pre {
+            code {
+              border-radius: 0.125em;
+              .hljs;
+            }
           }
           .message.display {
             .meta {

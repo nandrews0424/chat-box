@@ -1,6 +1,11 @@
 This our chat box component!!
 
+    highlight = require("highlight.js")
     markdown = require("marked")
+    markdown.setOptions
+        highlight: (code) ->
+          highlight.highlightAuto(code).value
+
     PolymerExpressions::markdown = (boxText) ->
       markdown(boxText or "")
 

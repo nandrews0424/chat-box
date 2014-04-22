@@ -6,8 +6,6 @@ build script and watch for changes.
     less = require 'gulp-less'
     browserify = require 'gulp-browserify'
     rename = require 'gulp-rename'
-   
-
 
 And our scripts
 
@@ -19,12 +17,10 @@ for each.
 
       targets =
         'src': 'build'
-  
 
 Each area has html templates, less styles, and litcoffee source.
 
       for src, dest of targets
-       
         gulp.src '**/*.litcoffee', {cwd: src, read: false}
           .pipe browserify
             transform: ['coffeeify']
@@ -36,9 +32,5 @@ Each area has html templates, less styles, and litcoffee source.
           .pipe gulp.dest dest
         gulp.src '**/*.html', {cwd: src}
           .pipe gulp.dest dest
-       
-
-
 
     gulp.task 'default', ['source']
-    

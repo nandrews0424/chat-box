@@ -1,8 +1,8 @@
 This our chat box component!!
 
-    markdown = require("markdown").markdown
+    markdown = require("marked")
     PolymerExpressions::markdown = (boxText) ->
-      markdown.toHTML(boxText or "")
+      markdown(boxText or "")
 
     moment = require("moment")
     PolymerExpressions::dateAgo = (date) -> moment(date).format('lll')

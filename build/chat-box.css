@@ -3723,6 +3723,7 @@ chat-box .chat-window .body ul .message.item.run-end .meta {
 chat-box .chat-window .body ul .message.item {
   padding: 0.5em;
   overflow-x: hidden;
+  word-wrap: break-word;
   -webkit-animation: showing 1s;
 }
 chat-box .chat-window .body ul .message.item p {

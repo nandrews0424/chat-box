@@ -66,6 +66,11 @@
             what: "And how",
             when: new Date(2014, 2, 10)
           })
+          evt.originalEvent.target.addMessage({
+            who: "You",
+            what: "`This_is_a_really_long_string_to_make_sure_we_word_wrap_well_otherwise_text_will_cut_off_and_not_be_fun`",
+            when: new Date(2014, 2, 10)
+          })
         } else {
           evt.originalEvent.detail.callback(undefined, evt.originalEvent.detail.startIndex, evt.originalEvent.detail.endIndex, [{
             who: "Sample",

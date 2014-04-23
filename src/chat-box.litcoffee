@@ -104,7 +104,6 @@ is to visually fold messages from a single user together with a block color.
       checkTyping: (evt) ->
         if @$.textbox.value.length > 0
           @fire "typing"
-          @$.footer.removeAttribute "style"
           listBottom = @$.messagelist.getBoundingClientRect().bottom
           lastTop = @shadowRoot.querySelector("li:last-of-type")?.getBoundingClientRect().top
           lastBottom = @shadowRoot.querySelector("li:last-of-type")?.getBoundingClientRect().bottom
@@ -112,7 +111,6 @@ is to visually fold messages from a single user together with a block color.
             @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
         else
           @fire "not-typing"
-          @$.footer.setAttribute "style","display: none"
       getDefaultFontSize: ->
         who = document.createElement('div')
         who.style.width = "1000em"

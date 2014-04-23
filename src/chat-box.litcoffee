@@ -19,8 +19,7 @@ This our chat box component!!
       messages: []
       nameIndexes: {}
       attached: ->
-        @$.loading.setAttribute "style","display: none"
-        @$.footer.setAttribute "style","display: none"
+        @$.loading.setAttribute "style", "display: none"
       ready: ->
         @getChunk()
 
@@ -41,7 +40,7 @@ in the array. `startIndex` will be more negative or equal to `endIndex`.
             for message in messages
               @messages.splice(slot, 1, message)
               slot++
-            @$.loading.setAttribute "style","display: none"
+            @$.loading.setAttribute "style", "display: none"
             if endIndex is -1
               setTimeout =>
                 @shadowRoot.querySelector("li:last-of-type")?.scrollIntoView(false)
